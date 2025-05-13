@@ -24,6 +24,7 @@ interface CyclesContextProviderProps {
  children: ReactNode
 }
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const CyclesContext = createContext({} as CyclesContextType)
 
 export function CyclesContextProvider({ children } : CyclesContextProviderProps ) {
