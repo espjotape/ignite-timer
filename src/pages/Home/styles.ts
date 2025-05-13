@@ -30,7 +30,7 @@ export const BaseCountdownButton = styled.button`
  border: none;
  cursor: pointer;
 
- color: ${(props) => props.theme['gray-100']};
+ color: ${(props) => props.theme['gray-150']};
 
  &:not(:disabled):hover {
   background: ${(props) => props.theme['green-700']};

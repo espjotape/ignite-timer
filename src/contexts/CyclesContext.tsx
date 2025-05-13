@@ -14,6 +14,8 @@ interface CyclesContextType {
  activeCycle: Cycle | undefined
  activeCycleId: string | null
  amountSecondsPassed: number
+ theme: boolean
+ switchTheme: () => void
  markCurrenteCycleAsFinished: () => void
  setSecondsPassed: (seconds: number) => void
  createNewCycle: (data: CreteCycleData) => void
@@ -92,6 +94,19 @@ export function CyclesContextProvider({ children } : CyclesContextProviderProps 
   dispatch(interruptCurrentCycleAction())
  }
 
+  const [theme, setTheme] = useState(() => {
+    const storedTheme = localStorage.getItem('@ignite-timer:theme')
+    return storedTheme ? storedTheme === 'true' : false
+  })
+
+  function switchTheme() {
+    setTheme((prevTheme) => {
+      const newTheme = !prevTheme
+      localStorage.setItem('@ignite-timer:theme', String(newTheme))
+      return newTheme
+    })
+  }
+
  return(
   <CyclesContext.Provider 
     value={{
@@ -99,13 +114,15 @@ export function CyclesContextProvider({ children } : CyclesContextProviderProps 
      activeCycle, 
      activeCycleId, 
      amountSecondsPassed,
+     theme,
+     switchTheme,
      markCurrenteCycleAsFinished,
      setSecondsPassed,
      createNewCycle,
      interruptCurrentCycle
     }}
     >
-    { children }
+    {children}
   </CyclesContext.Provider>
  )
 }
