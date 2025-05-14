@@ -52,6 +52,12 @@ export function Countdown() {
    }
   }, [minutes, seconds, activeCycle])
 
+  useEffect(() => {
+    if (!activeCycle) {
+      document.title = 'Ignite Timer'
+    }
+  }, [activeCycle])
+  
  return(
   <CountdownContiner>
      <span>{minutes[0]}</span>
