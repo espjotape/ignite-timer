@@ -18,18 +18,13 @@ export function NewCycleForm() {
    {...register('task')}
   />
 
-  <datalist id="task-suggestions">
-   <option value="projeto 1"></option>
-   <option value="banana"></option>
-  </datalist>
-
   <label htmlFor="minutesAmount">durante</label>
   <MinutesAmountInput 
    type="number" 
    id="minutesAmount"
    placeholder='00'
    step={5}
-   min={1}
+   min={5}
    max={60}
    disabled={!!activeCycle}
    {...register('minutesAmount', { valueAsNumber : true})}
