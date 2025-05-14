@@ -5,9 +5,22 @@ import { useFormContext } from "react-hook-form";
 import { Minus, Plus } from "phosphor-react";
 
 export function NewCycleForm() {
- const { register } = useFormContext()
+ const { register, setValue, watch } = useFormContext()
  const { activeCycle, cycles } = useContext(CyclesContext)
 
+ const minutesAmount = watch('minutesAmount') || 0;
+
+ const handleIncrement = () => {
+  if (minutesAmount < 60) {
+    setValue('minutesAmount', minutesAmount + 5);
+  }
+};
+
+const handleDecrement = () => {
+ if (minutesAmount > 5) {
+   setValue('minutesAmount', minutesAmount - 5);
+ }
+};
  return(
   <FormContainer>
   <label htmlFor="task">Vou trabalhar em</label>
@@ -35,7 +48,11 @@ export function NewCycleForm() {
   <label htmlFor="minutesAmount">durante</label>
    
   <MinutesAmountContainer>
-   <MinusButton type="button">
+   <MinusButton 
+    disabled={!!activeCycle}
+    type="button"
+    onClick={handleDecrement}
+    >
     <Minus size={16}/>
    </MinusButton>
    
@@ -49,7 +66,11 @@ export function NewCycleForm() {
     disabled={!!activeCycle}
     {...register('minutesAmount', { valueAsNumber : true})}
    />
-   <PlusButton type="button">
+   <PlusButton
+    disabled={!!activeCycle}
+    type="button"
+    onClick={handleIncrement}
+   >
     <Plus size={16}/>
    </PlusButton>
   </MinutesAmountContainer>
