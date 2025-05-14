@@ -1,54 +1,62 @@
-# React + TypeScript + Vite
+# ⏱️ IgniteTimer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Um projeto desenvolvido com React + TypeScript inspirado na técnica Pomodoro, mas com uma proposta mais flexível e personalizada. Ideal para manter o foco e organizar suas tarefas de forma eficiente.
 
-Currently, two official plugins are available:
+## 🚀 Funcionalidades
+- ✅ Criar ciclos personalizados com nome da tarefa e duração desejada
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- ✅ Temporizador em tempo real com início e opção de interrupção
 
-## Expanding the ESLint configuration
+- ✅ Histórico de tarefas realizadas, interrompidas ou concluídas
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- ✅ Modo dark/light com alternância simples
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+- ✅ Interface responsiva e intuitiva
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+- ✅ Feedback visual ao iniciar e finalizar tarefas
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 🧪 Tecnologias e ferramentas
+Esse projeto foi desenvolvido com as seguintes tecnologias:
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+- React
+ 
+- TypeScript
+
+- Styled Components
+
+- React Hook Form
+
+- Zod
+
+- Immer
+
+- Date-fns
+
+- React Router DOM
+
+## 💡 Diferenciais
+
+- Utilização da Context API para gerenciamento global de ciclos
+
+- Validação de formulários com React Hook Form + Zod
+
+- Modo claro e escuro com persistência de tema
+
+- Código organizado com boas práticas (eslint, tipagem forte, componentização)
+
+- Desenvolvido com Vite para melhor performance e DX
+
+## 📂 Como executar o projeto
+```bash
+# Clone o repositório
+git clone https://github.com/espjotape/ignite-timer.git
+
+# Acesse a pasta do projeto
+cd ignite-timer
+
+# Instale as dependências
+npm install
+
+# Inicie o projeto
+npm run dev
 ```
