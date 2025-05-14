@@ -29,7 +29,7 @@ export const HeaderContainer = styled.header`
     border-bottom: 3px solid ${(props) => props.theme['green-500']}
    }
 
-   &:active {
+   &.active {
    color: ${(props) => props.theme['green-500']};
   }
   }
@@ -65,7 +65,4 @@ export const ThemeSwitcher = styled.button`
     border-bottom: 3px solid ${(props) => props.theme["green-500"]};
   }
 
-  &.active {
-    color: ${(props) => props.theme["green-500"]};
-  }
 `;
