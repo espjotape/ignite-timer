@@ -5,6 +5,7 @@ export const GlobalStyle = createGlobalStyle`
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.2s ease;
  }
 
  :focus {
@@ -16,11 +17,13 @@ export const GlobalStyle = createGlobalStyle`
   background: ${props => props.theme["gray-900"]};
   color: ${props => props.theme["gray-300"]};
   -webkit-font-smoothing: antialiased;
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.2s ease;
  }
 
  body, input, textarea, button {
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
   font-size: 1rem;
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.2s ease;
  }
 `
